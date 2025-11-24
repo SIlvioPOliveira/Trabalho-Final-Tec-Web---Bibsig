@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerenciamento de Livros</h1>
+            <p>Gerencie seus Livros de forma simples e intuitiva</p>
+        </header>
+
+        <div class="content">
+            <div class="card">
+                <h2 class="card-title">Adicionar/Atualizar Livro</h2>
+                <form id="livroForm"> <input type="hidden" id="livroId" name="livroId"> <div class="form-group">
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" name="autor" placeholder="Digite o nome do autor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Digite o Titulo do livro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ano">Ano</label>
+                        <input type="text" id="ano" name="ano" placeholder="Digite o ano de publicação do livro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editora">Editora</label>
+                        <input type="text" id="editora" name="editora" placeholder="Digite a editora do livro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paginas">Paginas</label>
+                        <input type="text" id="paginas" name="paginas" placeholder="Digite a quantidade de paginas do livro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Genero</label>
+                        <input type="text" id="genero" name="genero" placeholder="Digite o genero do livro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disponivel">Disponibilidade (true/false)</label>
+                        <input type="text" id="disponivel" name="disponivel" placeholder="Digite a disponibilidade (true ou false)" required>
+                    </div>
+
+                    <button type="submit" id="saveBtn" class="btn-primary">Salvar Livro</button>
+                    <button type="button" id="clearBtn" class="btn-secondary">Limpar Formulário</button> </form>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Lista de Livros</h2>
+                <p style="color: var(--text-light); margin-bottom: 20px;">Clique no botão abaixo para carregar todos os Livros do sistema.</p>
+                <button id="getAllLivrosBtn" class="btn-secondary" style="width: 100%;">Carregar Livros</button> <div style="margin-top: 20px; text-align: center; color: var(--text-light); font-size: 0.9rem;">
+                    <p>ℹ️ Os Livros aparecem na tabela abaixo</p>
+                </div>
+            </div>
+
+            <div class="card table-section">
+                <div class="table-header">
+                    <h2 class="card-title" style="margin: 0;">Livros Cadastrados</h2>
+                </div>
+                <table id="livrosTable"> <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Autor</th>
+                            <th>Titulo</th>
+                            <th>Ano</th>
+                            <th>Editora</th>
+                            <th>Paginas</th>
+                            <th>Genero</th>
+                            <th>Disponibilidade</th>
+                            <th>Ações</th> </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="9" class="empty-state"> <p>Nenhum Livro cadastrado. Clique em "Carregar Livros" para começar!</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
